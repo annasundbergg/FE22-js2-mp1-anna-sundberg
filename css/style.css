@@ -49,3 +49,8 @@ button {
 .scoreboard-header {
     font-weight: bold;
 }
+
+#error-message{
+    display: none;
+    color: red;
+}

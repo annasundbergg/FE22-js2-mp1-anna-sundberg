@@ -156,24 +156,28 @@ async function putSortedData(obj) {
 }
 
 //skapar topplistan med info från databasen
+
 function showScoreboard(info) {
     const infoCard = document.querySelector("#scoreboard");
     infoCard.innerText = "";
-    const scoreBoard = document.createElement("div");
+    const scoreBoard = document.createElement("ol");
     scoreBoard.classList.add("scoreboard-header");
     infoCard.append(scoreBoard);
     scoreBoard.innerText = "SCOREBOARD";
+    let counter = 0;
 
     info.forEach((element) => {
+        counter++;
         const { name, score } = element;
 
         const h1 = document.createElement("p");
-        h1.innerText = name;
+        h1.innerText = counter + ". " + name;
         h1.classList.add("gamername");
 
         const h2 = document.createElement("p");
         h2.innerText = score;
 
         infoCard.append(h1, h2);
+        
     });
 }

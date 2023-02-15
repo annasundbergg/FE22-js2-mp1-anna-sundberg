@@ -16,56 +16,64 @@ document.querySelector("#computer-wins").style.display = "none";
 
 startBtn.addEventListener("click", function (event) {
     event.preventDefault();
-    document.querySelector("#game-container").style.display = "block";
-    document.querySelector("#go").style.display = "block";
-    document.querySelector("#go").innerText =
-        "Let's go, " +
-        gamerName.value +
-        "!" +
-        " Let's see if you can make the scoreboard...";
 
-    let playerText = document.querySelector("#player-text");
-    let computerText = document.querySelector("#computer-text");
+    if (gamerName.value == "") {
+        document.querySelector("#go").style.display = "none";
+        document.querySelector("#error-message").style.display = "block";
+    } else {
+        document.querySelector("#error-message").style.display = "none";
+        document.querySelector("#game-container").style.display = "block";
+        document.querySelector("#go").style.display = "block";
+        document.querySelector("#go").innerText =
+            "Let's go, " +
+            gamerName.value +
+            "!" +
+            " Let's see if you can make the scoreboard...";
 
-    gameContainer.addEventListener("click", function (event) {
-        let randomNumber = Math.floor(Math.random() * array.length);
-        const userChoice = event.target.id;
-        const computerChoice = array[randomNumber];
+        let playerText = document.querySelector("#player-text");
+        let computerText = document.querySelector("#computer-text");
 
-        if (event.target.tagName === "BUTTON") {
-            playerText.innerText = gamerName.value + ": " + userChoice;
-            computerText.innerText = "Computer: " + computerChoice;
+        gameContainer.addEventListener("click", function (event) {
+            let randomNumber = Math.floor(Math.random() * array.length);
+            const userChoice = event.target.id;
+            const computerChoice = array[randomNumber];
 
-            if (
-                (userChoice == "rock" && computerChoice == "scissors") ||
-                (userChoice == "scissors" && computerChoice == "paper") ||
-                (userChoice == "paper" && computerChoice == "rock")
-            ) {
-                playerPoints++;
-                resultText.innerText = "Du fick poäng!";
-            } else if (
-                (computerChoice == "paper" && userChoice == "rock") ||
-                (computerChoice == "rock" && userChoice == "scissors") ||
-                (computerChoice == "scissors" && userChoice == "paper")
-            ) {
-                computerPoints++;
+            if (event.target.tagName === "BUTTON") {
+                playerText.innerText = gamerName.value + ": " + userChoice;
+                computerText.innerText = "Computer: " + computerChoice;
 
-                resultText.innerText = "Datorn vann, spelet är över!";
-            } else if (userChoice == computerChoice) {
-                resultText.innerText = "Ingen fick poäng!";
+                if (
+                    (userChoice == "rock" && computerChoice == "scissors") ||
+                    (userChoice == "scissors" && computerChoice == "paper") ||
+                    (userChoice == "paper" && computerChoice == "rock")
+                ) {
+                    playerPoints++;
+                    resultText.innerText = "Du fick poäng!";
+                } else if (
+                    (computerChoice == "paper" && userChoice == "rock") ||
+                    (computerChoice == "rock" && userChoice == "scissors") ||
+                    (computerChoice == "scissors" && userChoice == "paper")
+                ) {
+                    computerPoints++;
+
+                    resultText.innerText = "Datorn vann, spelet är över!";
+                } else if (userChoice == computerChoice) {
+                    resultText.innerText = "Ingen fick poäng!";
+                }
             }
-        }
 
-        playerPointsh3.innerText = "DINA POÄNG: " + playerPoints;
+            playerPointsh3.innerText = "DINA POÄNG: " + playerPoints;
 
-        if (computerPoints == 1) {
-            document.querySelector("#computer-wins").style.display = "block";
-            document.querySelector("#computer-wins").innerText =
-                "DU FICK " + playerPoints + " POÄNG!";
-            winner();
-            getScore();
-        }
-    });
+            if (computerPoints == 1) {
+                document.querySelector("#computer-wins").style.display =
+                    "block";
+                document.querySelector("#computer-wins").innerText =
+                    "DU FICK " + playerPoints + " POÄNG!";
+                winner();
+                getScore();
+            }
+        });
+    }
 });
 
 function winner() {
@@ -178,6 +186,5 @@ function showScoreboard(info) {
         h2.innerText = score;
 
         infoCard.append(h1, h2);
-        
     });
 }

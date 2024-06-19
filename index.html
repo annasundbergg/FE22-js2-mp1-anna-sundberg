@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="js/script.js" defer></script>
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="icon" type="favicon" href="./images/favicon.png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Nabla&display=swap"
-            rel="stylesheet"
-        />
-        <title>ROCK PAPER SCISSORS</title>
-    </head>
-    <body>
-        <h1 id="game-header">ROCK PAPER SCISSORS</h1>
-        <h2>Låt oss spela sten, sax, påse</h2>
-        <div id="header">
-            <form action="">
-                <p>Vad heter du?</p>
-                <input type="text" placeholder="YOUR NAME">
-                <button id="start-btn">LET'S PLAY</button>
-                <h4 id="go"></h4>
-                <p id="error-message">Name required!</p>
-            </form>
-        </div>
-        <div id="game-container">
-            <button class="game-btns" id="rock">ROCK</button>
-            <button class="game-btns" id="paper">PAPER</button>
-            <button class="game-btns" id="scissors">SCISSORS</button>
-            <h2 class="game-text" id="player-text">Player:</h2>
-            <h2 class="game-text" id="computer-text">Computer:</h2>
-            <h2 class="game-text" id="result-text">Result:</h2>
-            <h3 id="player-points">DINA POÄNG: 0</h3>
-            <h1 class="winner" id="computer-wins"></h1>
-        </div>
-        <div id="scoreboard"></div>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="favicon" href="./images/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <title>ROCK PAPER SCISSORS</title>
+  </head>
+  <body>
+    <h1 id="title">ROCK PAPER SCISSORS</h1>
+    <div id="instructions">
+      <h2>Låt oss spela sten, sax, påse</h2>
+      <p>
+        Du ska vinna över datorn så många gånger som möjligt, när datorn vinner
+        är spelet över
+      </p>
+    </div>
+    <div id="game-header">
+      <form action="">
+        <p>Vad heter du?</p>
+        <input type="text" placeholder="YOUR NAME" />
+        <br />
+        <button id="start-btn">LET'S PLAY</button>
+        <h4 id="go"></h4>
+        <p id="error-message">Name required!</p>
+      </form>
+    </div>
+    <div id="game-container">
+      <button class="game-btns" id="rock">&#129704</button>
+      <button class="game-btns" id="paper">&#128220</button>
+      <button class="game-btns" id="scissors">
+        &#9986&#65039</button>
+      <h2 class="game-text" id="player-text">Player:</h2>
+      <h2 class="game-text" id="computer-text">Computer:</h2>
+      <h2 class="game-text" id="result-text">Result:</h2>
+      <h3 id="player-points">DINA POÄNG: 0</h3>
+      <h1 class="game-over" id="points"></h1>
+    </div>
+    <div id="scoreboard">
+        <h1 class="scoreboard-header">SCOREBOARD</h1>
+    </div>
+  </body>
 </html>

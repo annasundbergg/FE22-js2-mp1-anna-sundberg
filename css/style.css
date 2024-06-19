@@ -1,56 +1,99 @@
 body {
-    font-family: "Courier New", Courier, monospace;
-    text-align: center;
-    height: 100vh;
-    width: 100vw;
+  font-family: "Righteous", sans-serif;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(152, 159, 113, 0.44);
 }
 
-#header {
-    padding: 0.5;
+#title {
+  color: #989f71;
+  font-family: "Righteous", sans-serif;
+  font-size: 50px;
+  text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+#instructions {
+  color: rgba(0, 0, 0, 0.54);
 }
 
 #game-header {
-    font-family: "Nabla", cursive;
-    font-size: 50px;
-    text-align: center;
-    margin: 1rem;
+  color: #838862;
+  background-color: rgba(152, 159, 113, 0.44);
+  width: 500px;
+  height: 200px;
+  margin: auto;
 }
 
-.winner {
-    font-family: "Courier New", Courier, monospace;
+#game-container {
+  color: #606159;
+  margin: auto;
+  width: 600px;
+  height: 400px;
+}
+
+.game-over {
+  font-family: "Courier New", Courier, monospace;
+}
+
+.scoreboard-header {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 2rem;
+  font-size: 50px;
+  color: #989f71;
 }
 
 #scoreboard {
-    padding: 0;
-    margin: 10;
+  width: 400px;
+  height: 500px;
+  padding: 0;
+  margin: auto;
 }
 
-div {
-    border: 3px solid gold;
-    padding: 2rem;
-    margin: 2rem;
+.name-container {
+  background-color: #d9d9d9;
+  width: 300px;
+  margin: auto;
 }
 
-#score-header {
-    padding: 0;
-    margin: 0;
-    font-weight: bold;
+#game-container,
+#game-header {
+  border: 5px solid #838862;
+  padding: 2rem;
+  margin-bottom: 2rem;
 }
 
 button {
-    background-color: gold;
+  background-color: #838862;
+  color: #d1d4c0;
+  margin-top: 2rem;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  border: 1px solid #4f523f;
+  border-radius: 50px;
+  font-family: "Righteous", sans-serif;
 }
 
 #go {
-    display: none;
+  display: none;
 }
 
 .gamername,
 .scoreboard-header {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-#error-message{
-    display: none;
-    color: red;
+#error-message {
+  display: none;
+  color: rgb(86, 9, 9);
+}
+
+.game-btns {
+  font-size: 90px;
+  padding: 1rem 2rem 1rem 2rem;
+  margin: 0.5rem;
+  cursor: pointer;
 }
